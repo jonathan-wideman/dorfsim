@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="simDwarf">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+
+    <body ng-controller="mainController">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 well">
+                    <h1 class="text-center">{{fortress.name}}</h1>
+                    <h1 class="text-center"><small>{{game.date | date : 'longDate'}}</small></h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 well">
+                    <h2>Population</h2>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="person in population" class="row jw-list-spacing">
+                            <span class="col-md-12">{{person.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 well">
+                    <h2>Fortress</h2>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="room in rooms" class="row jw-list-spacing">
+                            <span class="col-md-10">{{room.template.name}}</span>
+                            <span class="col-md-2">{{room.area | number : 0}} m<sup>2</sup></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 well">
+                    <h2>Supplies</h2>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="supply in supplies" class="row jw-list-spacing">
+                            <strong class="col-md-1">{{supply.amount}}</strong>
+                            <span class="col-md-1"><img ng-src="{{supply.item.icon}}" class="jw-img-icon img-rounded"></span>
+                            <span ng-class="{'col-md-10': !debug.cheats, 'col-md-7': debug.cheats}">{{supply.item.name}}</span>
+                            <!-- <span ng-show="debug.cheats" class="col-md-1">{{supply.amount}}</span> -->
+                            <div ng-show="debug.cheats" class="col-md-3">
+                                <input type="number" class="form-control input-sm" ng-model="supply.amount">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

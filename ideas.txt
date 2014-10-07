@@ -1,0 +1,214 @@
+crafting system:
+    - defined by recipes (like cooking)
+        - made up of a series of steps
+            - most steps are ordered
+            - some steps can be concurrent
+            - each step has
+                - requirements
+                    - room
+                    - furniture
+                    - items
+                    - minimum skill
+                    - tools
+                    - possibly other recipe
+                - related skill
+                - process name or type(eg. 'fold', 'saw', 'saute')
+                    - will display with skill eg. 'woodworking - saw' vs 'surgery - saw'
+                - difficulty
+                - perceptions
+                    - per caste
+                    - examples:
+                        - distasteful
+                        - highly skilled
+                        - prohibited
+                    - (sidenote: maybe should handle skill values/labors by processes as well?)
+                - base (minimum) time
+                - results
+                    - items
+        - can display (as checklist tree)
+            - all its steps and their requirements
+            - total reqs. & minumum time
+        - requesting a recipe requests its requirements if necessary
+            - can toggle on a whole or per step
+
+caste system:
+    - made up of individuals or groups
+    - have customizable name
+    - can add/remove individuals or groups
+    - examples:
+        - miners
+        - military
+        - nobles
+        - peasants
+
+group system:
+    - made up of individuals
+    - some are defined automatically
+        - examples:
+            - immediate family
+            - extended family
+            - friends
+            - pets
+        - usually equate to relationships
+        - are uneditable by player
+    - others are customizable
+        - have customizable name
+        - can add/remove individuals
+    - examples:
+        - familial
+        - military squad
+        - urist's mighty miners
+
+- alternate grouping system
+    - represent labors, restrictions, etc info as 'profiles' that can be assigned to whatever group
+    - groups encompass the whole of individual/caste/etc
+    - groups are essentially saved searches
+    - con: lose the ability to store info per group eg. castes food prefs, other group-think
+
+room system:
+    - generic
+        - has area (sq m)
+        - has floor/wall material (with areas?)
+    - specific (type or function)
+        - examples:
+            - bedroom
+            - dining room
+            - office
+            - garden
+            - workshop
+            - tomb
+        - can be owned
+            - by individual(s) or group(s) only
+                - (eg for groups: family bedroom)
+            - owns the contents and the area
+            - can store other owned items
+        - can be assigned
+            - to individual(s), group(s), or caste(s)
+            - examples:
+                - workshop: only assigned work here
+                - bedroom: only assigned sleep here
+                - dining room: only assigned eat here
+            - owns neither contents nor area
+            - can store owned items
+        - levelled distinctions
+            - examples:
+                - minimum functional
+                - basic
+                - ordinary
+                - comfortable
+                - fine
+                - grand
+            - each level has requirements
+                - space
+                - furniture
+                - decoration
+                - other
+
+shedules:
+    - (like prison architect)
+    - (paint them out like my calendar app idea)
+    - define times to
+        - eat
+        - sleep
+        - work
+        - have free time
+    - assigned per caste
+    - individuals can break schedule if then have enough desire
+        - will instead take free time
+    - free time activities determined by individual preference
+    - more schedule -> more stress
+    - can set hard deadlines to exlude latecomers
+        - encourages promptness
+        - more stress
+    - can set specifics to periods, eg:
+        - sleep
+            - nap
+            - full
+            - until rested
+        - work
+            - hard labor (gets more done at cost of stress)
+            - enforced quota
+                - will always display approximate quotas
+                - high quotas cause more stress but speed labor
+                - low quotas ensure a certain amount of product then free time
+                - can force work until quota complete, missing other activities
+        - eat
+            - eat quickly
+            - eat and socialize
+            - snack only
+            - full meal
+            - eat at post
+            - eat in dining room
+    - can define rooms for periods (except free time)
+    - added gameplay benefit of schedules:
+        - can approximate where individuals are at any time
+        - check schedule
+            - check if any are breaking
+            - determine freetime activities based on preference as normal
+            - place all individuals at activity in semi-random stages
+                - assume progress based on schedule vs expected quotas
+
+meals:
+    - composed of different nutrients
+        - nutrients could be
+            - generic categories? eg:
+                - protein
+                - vegetable
+                - carbs
+                - fats
+                - etc
+            - specific vitamins/minerals/chemicals? eg:
+                - vit. D
+                - vit. B12
+                - fluorine
+                - lipids
+                - proteins
+                - carbohydrates
+            - hybrid of above?
+                - general categories with some specific 'specials'
+                    - ('specials' linked to various effects, eg. fluorine, calcium to dental care)
+        - each individual needs various nutrients to survive
+        - too little of some results in malnutrition diseases (eg. scurvy)
+    - made from recipes (outlined in crafting above)
+        - some recipes provided &/ discovered
+        - can make own recipes
+    - finished meals and ingredients have
+        - quality
+        - 'exotic' vs 'mundane' value
+            - how often it is eaten by that caste (individual?)
+        - 'fanciness' (nobility preference)
+    - resultant values are based on
+        - ingredient values
+        - preparation methods
+        - preparation time
+        - eg. a souffle will be higher status than a fried egg
+            - due to both ingredients and preparation
+
+engravings:
+    - give decoration mood bonus
+        - diminishing returns from quantity/spacing
+            - unless cohesive (eg. saga or patterned
+        - extra bonus from relation to room function
+            - eg epitaphs, well-wishes, and accomplishments in tomb
+    - can be ordered specifically
+        - choose the type and contents with any level of detail
+    - can be left to engraver's choice
+        - tries to match room function
+        - sometimes encorporates engraver's preference
+    - each has certain style tags
+        - examples:
+            - genres:
+                - stylistic
+                - realistic
+            - descriptors:
+                - heavy
+                - deep
+                - sharp
+                - flowing
+            - moods:
+                - macabre
+                - disturbing
+                - playful
+                - austere
+        - chosen mostly by the engraver's preference
+        - over time the engraver will develop a signature style
